@@ -17,6 +17,7 @@ async function run(): Promise<void> {
       deleteBranch: core.getBooleanInput('delete-branch'),
       branchSuffix: core.getInput('branch-suffix'),
       base: core.getInput('base'),
+      baseRepo: core.getInput('baseRepo'),
       pushToFork: core.getInput('push-to-fork'),
       title: core.getInput('title'),
       body: core.getInput('body'),

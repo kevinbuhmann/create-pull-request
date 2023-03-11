@@ -110,6 +110,7 @@ export async function createOrUpdateBranch(
   git: GitCommandManager,
   commitMessage: string,
   base: string,
+  baseRepo: string,
   branch: string,
   branchRemoteName: string,
   signoff: boolean,
@@ -126,7 +127,7 @@ export async function createOrUpdateBranch(
 
   // If the base is not specified it is assumed to be the working base.
   base = base ? base : workingBase
-  const baseRemote = 'origin'
+  const baseRemote = baseRepo ? baseRepo : 'origin'
 
   // Set the default return values
   const result: CreateOrUpdateBranchResult = {

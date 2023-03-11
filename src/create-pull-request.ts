@@ -21,6 +21,7 @@ export interface Inputs {
   deleteBranch: boolean
   branchSuffix: string
   base: string
+  baseRepo: string
   pushToFork: string
   title: string
   body: string
@@ -180,6 +181,7 @@ export async function createPullRequest(inputs: Inputs): Promise<void> {
       git,
       inputs.commitMessage,
       inputs.base,
+      inputs.baseRepo,
       inputs.branch,
       branchRemoteName,
       inputs.signoff,
